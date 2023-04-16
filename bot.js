@@ -117,9 +117,10 @@ async function log(ctx, next) {
 bot.command("start", async (ctx) => {
   await ctx
     .reply(
-      "*Wassup nutcracker, I'm Mongo Tom. 👋 *\n_A badass AI sent down from the heavens to teach you shitstains what your tiny brains couldn't comprehend.\nAsk me anything or add me to groups just don't waste my time._"
+      "*Wassup nutcracker, I'm Mongo Tom. 👋 *\n_A badass AI sent down from the heavens to teach you shitstains what your tiny brains couldn't comprehend.\nAsk me anything or add me to groups, just don't waste my time._"
     )
-    .then(console.log("New user added:\n", ctx.from));
+    .then(console.log("New user added:\n", ctx.from))
+    .catch((e) => console.log(e));
 });
 
 bot.command("help", async (ctx) => {
@@ -127,7 +128,8 @@ bot.command("help", async (ctx) => {
     .reply(
       "*@anzubo Project.*\n\n_This is a chat bot using OpenAI's Chat API with a custom foul mouthed personality.\nAsk any query to get started!_"
     )
-    .then(console.log("Help command sent to", ctx.chat.id));
+    .then(console.log("Help command sent to", ctx.chat.id))
+    .catch((e) => console.log(e));
 });
 
 // Tom
@@ -225,31 +227,6 @@ bot.on("message", async (ctx) => {
       });
       return;
     }
-  }
-});
-
-// Error
-
-bot.catch((err) => {
-  const ctx = err.ctx;
-  console.error(
-    "Error while handling update",
-    ctx.update.update_id,
-    "\nQuery:",
-    ctx.msg.text
-  );
-  const e = err.error;
-  if (e instanceof GrammyError) {
-    console.error("Error in request:", e.description);
-    if (e.description === "Forbidden: bot was blocked by the user") {
-      console.log("Bot was blocked by the user");
-    } else {
-      ctx.reply("An error occurred");
-    }
-  } else if (e instanceof HttpError) {
-    console.error("Could not contact Telegram:", e);
-  } else {
-    console.error("Unknown error:", e);
   }
 });
 
