@@ -26,7 +26,7 @@ This uses the official ChatGPT API which is paid hence will require an API key f
 
 <br>
 
-BOT_ADMIN refers to the user ID of your Telegram account. This is for logging purposes. You can add multiple IDs separated by commas.
+BOT_ADMIN refers to the user ID of your Telegram account. This is for logging purposes.
 
 API_KEY refers to OpenAI API key.
 
@@ -41,6 +41,12 @@ API_KEY refers to OpenAI API key.
 1. Use ```rm -rf```.
 
 *Note:* If you're unfamiliar with this command, delete project folder from file explorer.
+
+<br>
+
+### Mechanism
+
+The bot uses the official ChatGPT API by OpenAI with the modified Mongo Tom prompt to process queries.
 
 <br>
 

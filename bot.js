@@ -117,7 +117,7 @@ async function log(ctx, next) {
 bot.command("start", async (ctx) => {
   await ctx
     .reply(
-      "*Wassup nutcracker, I'm Mongo Tom.*\n_A badass AI sent down from the heavens to teach you shitstains what your tiny brains couldn't comprehend.\nAsk me anything or add me to groups just don't waste my time._"
+      "*Wassup nutcracker, I'm Mongo Tom. 👋 *\n_A badass AI sent down from the heavens to teach you shitstains what your tiny brains couldn't comprehend.\nAsk me anything or add me to groups just don't waste my time._"
     )
     .then(console.log("New user added:\n", ctx.from));
 });
@@ -125,7 +125,7 @@ bot.command("start", async (ctx) => {
 bot.command("help", async (ctx) => {
   await ctx
     .reply(
-      "*@anzubo Project.*\n\n_This is a chat bot using OpenAI's Chat API.\nAsk any query to get started!_"
+      "*@anzubo Project.*\n\n_This is a chat bot using OpenAI's Chat API with a custom foul mouthed personality.\nAsk any query to get started!_"
     )
     .then(console.log("Help command sent to", ctx.chat.id));
 });
